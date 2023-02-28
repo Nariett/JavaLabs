@@ -1,8 +1,6 @@
 package Task01;
 
 import java.util.Random;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 class Philosopher extends Thread {
     private Object leftFork;
