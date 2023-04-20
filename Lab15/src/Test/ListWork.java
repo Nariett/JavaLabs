@@ -29,10 +29,10 @@ public class ListWork extends JFrame {
         JLabel nameLabelTwo = new JLabel("Возраст");
         JLabel nameLabelThree = new JLabel("Место жительства");
 
-        JTextField myText = new JTextField(20); // 20 - это ширина текстового поля в символах
-        JTextField age = new JTextField(20); // 20 - это ширина текстового поля в символах
-        JTextField streetText = new JTextField(20); // 20 - это ширина текстового поля в символах
-        myBox1.add(nameLabel); // добавляем метку "имя"
+        JTextField myText = new JTextField(20);
+        JTextField age = new JTextField(20);
+        JTextField streetText = new JTextField(20);
+        myBox1.add(nameLabel);
         myBox1.add(myText);
         myBox1.add(nameLabelTwo);
         myBox1.add(age);
@@ -52,7 +52,6 @@ public class ListWork extends JFrame {
                 }
             }
         });
-
         Box box1 = new Box(BoxLayout.X_AXIS);
         JButton button1 = new JButton("Добавить в список");
         box1.add(button1);
@@ -60,9 +59,9 @@ public class ListWork extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 String name = myText.getText();
-                String ageStr = age.getText(); // Получаем текст из поля age
+                String ageStr = age.getText();
                 int ageInt = Integer.parseInt(ageStr);
-                String street = streetText.getText(); // Получаем текст из поля age
+                String street = streetText.getText();
                 Student student = new Student(ageInt, street);
                 students.put(name, student);
                 myListModel.addElement(name);
@@ -87,7 +86,9 @@ public class ListWork extends JFrame {
         buttonClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 myListModel.clear();
+                students.clear();
             }
         });
         box1.add(buttonClear);
@@ -145,7 +146,6 @@ public class ListWork extends JFrame {
                     }myBReader.close();
                 }
                 catch (FileNotFoundException ex) {
-                    // если файл не найден, то ничего страшного, мы просто не загрузим данные
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
