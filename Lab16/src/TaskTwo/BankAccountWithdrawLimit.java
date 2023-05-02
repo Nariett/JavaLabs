@@ -14,10 +14,19 @@ class BankAccountWithdrawLimit implements BankAccount {
     }
 
     public void withdraw(double amount) {
-        if (amount > withdrawLimit) {
-            System.out.println("Сумма снятия превышает лимит!");
-        } else {
+        if (amount > withdrawLimit && amount <= account.getBalance()) {
+            System.out.println("Сумма снятия "+amount);
             account.withdraw(amount);
+            System.out.println(account.getBalance());
+        } else {
+            if(amount > account.getBalance())
+            {
+                System.out.println("Сумма превышает баланс карты ");
+            }
+            else {
+                account.withdraw(amount);
+            }
+
         }
     }
 

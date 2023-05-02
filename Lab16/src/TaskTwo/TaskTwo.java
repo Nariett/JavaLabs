@@ -11,8 +11,8 @@ public class TaskTwo {
         decoratedAccount.withdraw(500);
         System.out.println("Баланс: " + decoratedAccount.getBalance());
 
-        decoratedAccount.withdraw(1500);
-        System.out.println("Баланс: " + decoratedAccount.getBalance());
+        decoratedAccount.withdraw(1001);
+        //System.out.println("Баланс: " + decoratedAccount.getBalance());
     }
 }
 

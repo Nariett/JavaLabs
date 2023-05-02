@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class TaskOne {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Доступные категории кистей:");
         System.out.println("1. Кисти для хужожника");
         System.out.println("2. Кисти для маляров");
